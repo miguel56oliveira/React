@@ -1,0 +1,218 @@
+/* index.css */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout to keep footer at bottom */
+.app-root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.app-content {
+  flex: 1 0 auto; /* cresce para preencher e empurrar o footer para baixo */
+}
+
+h1, h2, h3 {
+  color: #333;
+  margin: 0.5em 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Card dos jogos */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* centraliza o conteúdo horizontalmente */
+  min-height: 350px;
+  cursor: pointer;
+  text-align: center; /* centraliza texto dentro do card */
+}
+
+.card img {
+  border-radius: 10px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3,
+.card p {
+  margin: 5px 0; /* espaço uniforme entre texto */
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.card-buttons button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.card-buttons .buy-btn {
+  background-color: #c0392b; /* vermelho */
+  color: white;
+}
+
+.card-buttons .buy-btn:hover {
+  background-color: #a93226; /* hover mais escuro */
+}
+
+.card-buttons .price-btn {
+  background-color: #000; /* preto */
+  color: #fff;
+  cursor: default; /* não parece clicável */
+  pointer-events: none; /* impede cliques */
+}
+
+/* Menu icon styles */
+.menu-icon {
+  transition: transform 160ms ease, opacity 160ms ease;
+  transform-origin: center;
+}
+.menu-icon.open {
+  transform: scale(1.06); /* pequena expansão quando aberto */
+}
+.menu-button span {
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+.menu-button.open span {
+  transform: scale(1.06);
+}
+
+/* sem hover interativo para price-btn */
+.card-buttons .price-btn:disabled,
+.card-buttons .price-btn[aria-disabled="true"] {
+  opacity: 1; /* manter aparência */
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Botões */
+button {
+  padding: 10px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+/* Navbar */
+nav {
+  background: #1e1e1e;
+  padding: 15px;
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+}
+
+/* Footer */
+.site-footer {
+  background: #1e1e1e;
+  color: #fff;
+  padding: 18px 20px;
+  margin-top: 40px;
+}
+.site-footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+}
+.footer-brand {
+  font-size: 18px;
+}
+.footer-copy {
+  margin: 6px 0 0 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.footer-nav a,
+.footer-socials a {
+  color: #fff;
+  margin-left: 12px;
+  text-decoration: none;
+  opacity: 0.9;
+}
+.footer-nav a:hover,
+.footer-socials a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .site-footer .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-right {
+    align-items: center;
+  }
+  .footer-nav a {
+    margin: 6px;
+    display: inline-block;
+  }
+}
