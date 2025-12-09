@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="footer-brand">
             <strong>Loja de Jogos</strong>
           </div>
-          <p className="footer-copy">© {new Date().getFullYear()} Loja de Jogos. Todos os direitos reservados.</p>
+          <p className="footer-copy">© {new Date().getFullYear()} Loja de Jogos.</p>
         </div>
 
         <div className="footer-right">
